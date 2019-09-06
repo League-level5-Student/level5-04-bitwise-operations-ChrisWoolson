@@ -8,7 +8,27 @@ public class BinaryPrinter {
 	//Create a main method to test your methods.
 	
 	public void printByteBinary(byte b) {
+	int c = b;
+		int z = 256;
+		while(z != 1) {
+	if(c>z) {
+		z=z/2;
+		System.out.println("1");
+		c=c-z;
+	}else {
+	System.out.println(0);	
+	}
+	}
+		
 	
+	
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	public void printShortBinary(short s) {
@@ -22,4 +42,19 @@ public class BinaryPrinter {
 	public void printLongBinary(long l) {
 		
 	}
+	
+	public static void main(String[] args) {
+		
+		BinaryPrinter bp = new BinaryPrinter();
+		
+	}
+	
+	
+	BinaryPrinter(){
+		Byte c = (byte) 01010101;
+		System.out.println("correct is: "+c);
+		printByteBinary(c);
+	}
+	
+	
 }
