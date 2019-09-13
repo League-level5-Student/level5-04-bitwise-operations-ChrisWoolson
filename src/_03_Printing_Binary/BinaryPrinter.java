@@ -8,39 +8,66 @@ public class BinaryPrinter {
 	//Create a main method to test your methods.
 	
 	public void printByteBinary(byte b) {
-	int c = b;
-		int z = 256;
-		while(z != 1) {
-	if(c>z) {
-		z=z/2;
-		System.out.println("1");
-		c=c-z;
+	
+		
+		for (int i = 0; i < 8; i++) {
+			
+	if((b&1) == 1) {
+		System.out.print(1);
 	}else {
-	System.out.println(0);	
+		System.out.print(0);
 	}
+	b = (byte) (b>>1);
 	}
 		
+	System.out.println();
+	System.out.println();
 	
-	
-		
-		
-		
-		
-		
-		
 		
 	}
-	
 	public void printShortBinary(short s) {
-		
+		for (int i = 0; i < 16; i++) {
+			
+			if((s&1) == 1) {
+				System.out.print(1);
+			}else {
+				System.out.print(0);
+			}
+			s = (short) (s>>1);
+			}
+				
+			System.out.println();
+			System.out.println();
 	}
 	
-	public void printIntBinary(int i) {
-		
+	public void printIntBinary(int z) {
+		for (int i = 0; i < 32; i++) {
+			
+			if((z&1) == 1) {
+				System.out.print(1);
+			}else {
+				System.out.print(0);
+			}
+			z = z>>1;
+			}
+				
+			System.out.println();
+			System.out.println();
 	}
 	
 	public void printLongBinary(long l) {
-		
+		for (int i = 0; i < 64; i++) {
+			
+			if((l&1) == 1) {
+				System.out.print(1);
+			}else {
+				System.out.print(0);
+			}
+			l = l>>1;
+			}
+				
+			System.out.println();
+			System.out.println();
 	}
 	
 	public static void main(String[] args) {
@@ -52,8 +79,18 @@ public class BinaryPrinter {
 	
 	BinaryPrinter(){
 		Byte c = (byte) 01010101;
+		Short s = 1000;
+		int z= 20;
+		long l = 17;
 		System.out.println("correct is: "+c);
 		printByteBinary(c);
+		System.out.println("Correct is "+s);
+		printShortBinary(s);
+		System.out.println("correct is "+z);
+		printIntBinary(z);
+		System.out.println("correct is "+l);
+		printLongBinary(l);
+		
 	}
 	
 	
